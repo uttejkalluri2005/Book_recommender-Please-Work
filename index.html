@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendation system using ML</title>
+    <link rel="stylesheet" href="{{url_for('static',filename = 'style.css')}}">
+</head>
+
+<body class="proj">
+    
+    <div class="entire">
+        <h3 style="color: black;">Book Recomender System</h3>
+        <form action="/" method="POST" class="forma">
+            <label class="book_name" style="color: black;">Enter the book name:</label>
+            <input type="text" placeholder="Search" class="search" name="book_input"> <br>
+            <label class="similar_no" style="color: black;">How many similar books would you like?</label>
+            <input name="Similar_input" type="number" class="Num" min="1" max="10" step="1" required><br>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+
+    <!-- Clear any float behavior that might cause side-by-side layout -->
+    <div class="clear"></div>
+
+    <div class="recommended-books-section">
+        {% if boo %}
+        <h4 style="color: white;">The Books recommended for {{book_name}} are as follows:</h4>
+        <br>
+        {% for i in boo %}
+        <div class="Recommended-books">
+            <div class="card">
+                <img class="img_book" src="{{i[2]}}">
+                <p class="title" style="color: white;">{{i[0]}}</p>
+                <p class="author" style="color: white;">{{i[1]}}</p>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+
+</body>
+</html>

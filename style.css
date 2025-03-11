@@ -1,0 +1,57 @@
+ /* Make the entire container block-level */
+ .proj{
+  background: black;
+  
+}
+.entire{
+  background-color: #f0f0f0;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn,.search,.num{
+  border-radius: 15px;
+}
+
+.btn{
+  width: 150px;
+  background-color: green;
+}
+/* Ensure the recommended books section is on a new line */
+.recommended-books-section {
+  display: block;
+  margin-top: 30px;
+}
+
+/* Make sure the form has space at the bottom */
+form {
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* Add spacing between each book in the recommended list */
+.Recommended-books {
+  margin-top: 20px;
+}
+
+/* Optional: Add space between form fields */
+label, input, button {
+  margin-bottom: 10px;
+}
+
+/* Force block layout for the elements to stack properly */
+.card {
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* Clear any previous floats to ensure proper stacking */
+.clear {
+  clear: both;
+}
+
+/* Add spacing between title and author */
+.title, .author {
+  margin: 10px 0;
+}
