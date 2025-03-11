@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 app = Flask(__name__)
 fin_pt = pickle.load(open("fin_pt.pkl","rb"))
-books = pickle.load(open("books (1).pkl","rb"))
+books = pickle.load(open("books.pkl","rb"))
 @app.route("/",methods=["POST","GET"])
 def recommend():
     book_name = request.form.get("book_input")
