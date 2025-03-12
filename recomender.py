@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 app = Flask(__name__)
 fin_pt = pickle.load(open("fin_pt.pkl","rb"))
-books = pickle.load(open("book.pkl","rb"))
+b = pickle.load(open("b.pkl","rb"))
 @app.route("/",methods=["POST","GET"])
 def recommend():
     book_name = request.form.get("book_input")   
@@ -24,7 +24,7 @@ def recommend():
     boo=[]
     for i in ans:
         item=[]
-        temp_df = books[books["Book-Title"]==fin_pt.iloc[[i]].index[0]]
+        temp_df = b[b["Book-Title"]==fin_pt.iloc[[i]].index[0]]
         item.extend(list(temp_df.drop_duplicates("Book-Title")["Book-Title"].values))
         item.extend(list(temp_df.drop_duplicates("Book-Title")["Book-Author"].values))
         item.extend(list(temp_df.drop_duplicates("Book-Title")["Image-URL-M"].values))
