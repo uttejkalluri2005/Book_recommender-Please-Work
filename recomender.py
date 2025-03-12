@@ -5,10 +5,10 @@ import numpy as np
 import pandas as pd
 app = Flask(__name__)
 fin_pt = pickle.load(open("fin_pt.pkl","rb"))
-books = pickle.load(open("books.pkl","rb"))
+books = pickle.load(open("book.pkl","rb"))
 @app.route("/",methods=["POST","GET"])
 def recommend():
-    book_name = request.form.get("book_input")
+    book_name = request.form.get("book_input")   
     n = request.form.get("Similar_input")
     if n is None:
         n=0
